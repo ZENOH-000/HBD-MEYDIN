@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Selamat Ulang Tahun Meydin!</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@400;700&display=swap');
+
+  body {
+    margin: 0;
+    background: radial-gradient(circle at center, #f9d6e3, #eec9f0, #e0c3fc);
+    font-family: 'Montserrat', sans-serif;
+    color: #4b2a52;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .container {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 40px 35px;
+    max-width: 420px;
+    margin: auto;
+    box-shadow: 
+      0 4px 15px rgba(188, 99, 181, 0.5),
+      inset 0 0 40px rgba(234, 179, 226, 0.6);
+  }
+
+  h1 {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    font-size: 3.8rem;
+    margin: 0 0 10px;
+    color: #853d85;
+    text-shadow:
+      1px 1px 5px rgba(255 255 255, 0.8);
+  }
+
+  .subtext {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 35px;
+    color: #724a7b;
+    text-shadow: 0 0 5px rgba(255 255 255, 0.7);
+  }
+
+  button {
+    border: none;
+    border-radius: 40px;
+    padding: 14px 38px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, #d16ba5, #f8a3c6);
+    cursor: pointer;
+    outline: none;
+    box-shadow:
+      0 0 15px #f08acc;
+    transition:
+      background 0.4s ease,
+      box-shadow 0.4s ease,
+      transform 0.2s ease;
+  }
+
+  button:hover,
+  button:focus {
+    background: linear-gradient(135deg, #f8a3c6, #d16ba5);
+    box-shadow:
+      0 0 30px #f7b7d4,
+      0 0 60px #f7b7d4;
+    transform: scale(1.1);
+  }
+
+  .wishes {
+    margin-top: 30px;
+    font-size: 1.25rem;
+    color: #703d7a;
+    line-height: 1.5;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.7s ease, max-height 0.7s ease;
+    text-shadow: 0 0 6px rgba(255 192 203, 0.7);
+  }
+  .wishes.visible {
+    opacity: 1;
+    max-height: 300px;
+  }
+
+  /* Sparkle animation for soft glimmer background */
+  .sparkle {
+    position: fixed;
+    border-radius: 50%;
+    background: #fff0f8;
+    opacity: 0.8;
+    filter: drop-shadow(0 0 3px #ffccee);
+    animation: sparkleAnim 3s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .sparkle:nth-child(1) {
+    width: 8px; height: 8px;
+    top: 25%; left: 15%;
+    animation-delay: 0s;
+  }
+  .sparkle:nth-child(2) {
+    width: 5px; height: 5px;
+    top: 40%; left: 35%;
+    animation-delay: 1s;
+  }
+  .sparkle:nth-child(3) {
+    width: 7px; height: 7px;
+    top: 60%; left: 50%;
+    animation-delay: 1.5s;
+  }
+  .sparkle:nth-child(4) {
+    width: 6px; height: 6px;
+    top: 30%; left: 70%;
+    animation-delay: 2s;
+  }
+  .sparkle:nth-child(5) {
+    width: 8px; height: 8px;
+    top: 75%; left: 80%;
+    animation-delay: 2.5s;
+  }
+
+  @keyframes sparkleAnim {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.4);
+    }
+  }
+
+  /* Confetti container */
+  #confettiCanvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 10;
+  }
+  #meydin{
+    border-radius: 50%;
+    border: 5px solid #d16ba5;
+  }
+  #puma{
+    border-radius: 20%;
+    border: 5px solid #d16ba5;
+  }
+  #miami{
+    color: #724a7b;
+  }
+</style>
+</head>
+<body>
+  <div class="container" role="main" aria-label="Ucapan Selamat Ulang Tahun untuk Meydin">
+    <h1>Selamat Ulang Tahun, Meydin!</h1>
+      <img id="meydin" src="meydin3.jpg" height="150px" width="150px" alt="">
+    <div class="subtext">Semoga hari-harimu selalu penuh kebahagiaan, kesenangan, dan kenangan yang indah 🌸🎉🎂</div>
+    <button id="toggleWishes" aria-expanded="false" aria-controls="wishesText">Buka Hadiah</button>
+    <div id="wishesText" class="wishes" aria-live="polite" aria-atomic="true">
+      <a id="miami" href="https://id.puma.com/in/pd/sepatu-basket-mb.03-miami/310511.html" target="_blank"><u><b>PUMA MB.03 MIAMI</b></u></a>
+      <div>
+        <img id="puma" src="puma.png" alt="" height="140px"
+        width="170px">
+      </div>
+    </div>
+  </div>
+
+  <!-- Sparkles -->
+  <div class="sparkle" aria-hidden="true"></div>
+  <div class="sparkle" aria-hidden="true"></div>
+  <div class="sparkle" aria-hidden="true"></div>
+  <div class="sparkle" aria-hidden="true"></div>
+  <div class="sparkle" aria-hidden="true"></div>
+
+  <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+
+<script>
+  const button = document.getElementById('toggleWishes');
+  const wishes = document.getElementById('wishesText');
+  const confettiCanvas = document.getElementById('confettiCanvas');
+  const ctx = confettiCanvas.getContext('2d');
+
+  let confettiElements = [];
+
+  function resizeCanvas() {
+    confettiCanvas.width = window.innerWidth;
+    confettiCanvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  function randomRange(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  class Confetti {
+    constructor() {
+      this.x = Math.random() * confettiCanvas.width;
+      this.y = Math.random() * confettiCanvas.height - confettiCanvas.height;
+      this.size = randomRange(7, 14);
+      this.speed = randomRange(2, 5);
+      this.angle = randomRange(0, 2 * Math.PI);
+      this.swing = randomRange(0.02, 0.05);
+      // pastel pink, purple, and lavender hues
+      const colors = [
+        'hsl(320, 70%, 80%)',
+        'hsl(270, 80%, 85%)',
+        'hsl(290, 60%, 75%)',
+        'hsl(340, 60%, 80%)',
+        'hsl(310, 70%, 82%)'
+      ];
+      this.color = colors[Math.floor(Math.random() * colors.length)];
+      this.opacity = randomRange(0.6, 1);
+    }
+
+    update() {
+      this.y += this.speed;
+      this.x += Math.sin(this.angle) * 2;
+      this.angle += this.swing;
+
+      if (this.y > confettiCanvas.height) {
+        this.y = -this.size;
+        this.x = Math.random() * confettiCanvas.width;
+      }
+    }
+
+    draw() {
+      ctx.beginPath();
+      ctx.fillStyle = this.color;
+      ctx.globalAlpha = this.opacity;
+      ctx.fillRect(this.x, this.y, this.size, this.size * 0.4);
+      ctx.globalAlpha = 1;
+    }
+  }
+
+  function createConfetti(count = 100) {
+    confettiElements = [];
+    for (let i = 0; i < count; i++) {
+      confettiElements.push(new Confetti());
+    }
+  }
+
+  function animateConfetti() {
+    ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+    confettiElements.forEach(confetti => {
+      confetti.update();
+      confetti.draw();
+    });
+    if (wishes.classList.contains('visible')) {
+      requestAnimationFrame(animateConfetti);
+    } else {
+      ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+    }
+  }
+
+  button.addEventListener('click', () => {
+    const isVisible = wishes.classList.toggle('visible');
+    button.setAttribute('aria-expanded', isVisible);
+    button.textContent = isVisible ? 'Sembunyikan Hadiah' : 'Buka Hadiah';
+
+    if (isVisible) {
+      createConfetti();
+      animateConfetti();
+    }
+  });
+</script>
+</body>
+</html>
